@@ -6,5 +6,8 @@
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
-  "author": "Marco Torres"
+  "author": "Marco Torres",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
 }
