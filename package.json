@@ -1,0 +1,10 @@
+{
+  "name": "weather-wise",
+  "version": "1.0.0",
+  "description": "WDD330 Final Project",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "author": "Marco Torres"
+}
