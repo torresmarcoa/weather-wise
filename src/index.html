@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Wise</title>
-</head>
-<body>
-    
-</body>
+    <script type="module" src="./js/main.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="public/images/logos/logo.webp" alt="weather wise logo" />
+        <h1>Weather Wise</h1>
+      </div>
+    </header>
+    <main id="main">
+      <div id="banner">
+        <img src="public/images/weatherwiseBaner.webp" alt="Landscape" />
+      </div>
+      <div id="selectOne"><h2>Select one option:</h2></div>
+      <div id="weatherinfo"></div>
+      <div id="buttons">
+        <div id="current">
+          <button id="current" class="checkweather">Current Weather</button>
+        </div>
+        <div id="forecast">
+          <button id="forecast" class="checkweather">Weather Forecast</button>
+        </div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div id="footer">
+        <p>Weather Wise</p>
+        <p id="name">Marco Torres</p>
+      </div>
+    </footer>
+  </body>
 </html>
