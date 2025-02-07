@@ -1,4 +1,4 @@
-import CurrentWeather from "./Weatherinfo.mjs";
+import CurrentWeather from "./WeatherInfo.mjs";
 
 const weather = new CurrentWeather();
 
