@@ -1,7 +1,13 @@
 import CurrentWeather from "./WeatherInfo.mjs";
+import ForecastWeather from "./ForecastInfo.mjs";
 
 const weather = new CurrentWeather();
+const forecast = new ForecastWeather();
 
 document.getElementById("current").addEventListener("click", () => {
     weather.displayCurrentWeather();
+});
+
+document.getElementById("forecast").addEventListener("click", () => {
+    forecast.displayForecastWeather();
 });

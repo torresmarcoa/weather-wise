@@ -57,7 +57,7 @@ body {
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
+  width: 900px;
   min-height: 200px;
 }
 
@@ -91,6 +91,30 @@ body {
 
 #getWeather:hover {
   background-color: #1a252f;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  border: solid black 1px;
+}
+
+.weather-info p{
+  margin: auto;
+}
+
+.weather-info h4 {
+  margin-left: 10px;
+}
+
+.weather-info-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid black 1px;
+  justify-content: space-around;
 }
 /*End Modal styles*/
 
