@@ -91,7 +91,7 @@ export function darkmode() {
 
   const savedTheme = localStorage.getItem("theme");
 
-  if (savedTheme) {
+  /*if (savedTheme) {
     document.body.classList.toggle("dark-mode", savedTheme === "dark");
 
     if (savedTheme === "dark") {
@@ -99,16 +99,16 @@ export function darkmode() {
     } else {
       darkModeLarge.src = "/public/images/dark-mode.webp";
     }
-  }
+  }*/
 
   toggleDarkModeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 
     if (document.body.classList.contains("dark-mode")) {
-      darkModeLarge.src = "/public/images/dark-mode-dark.webp";
+      //darkModeLarge.src = "/public/images/dark-mode-dark.webp";
       localStorage.setItem("theme", "dark");
     } else {
-      darkModeLarge.src = "/public/images/dark-mode.webp";
+      //darkModeLarge.src = "/public/images/dark-mode.webp";
       localStorage.setItem("theme", "light");
     }
   });
