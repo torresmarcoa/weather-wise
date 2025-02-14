@@ -1,7 +1,9 @@
 export async function searchCity(query) {
   const API_URL = "https://api.openweathermap.org/geo/1.0/direct";
   const limit = 5;
-  const url = `${API_URL}?q=${encodeURIComponent(query)}&limit=${limit}&appid=${process.env.GEO_API_KEY}`;
+  const url = `${API_URL}?q=${encodeURIComponent(query)}&limit=${limit}&appid=${
+    process.env.GEO_API_KEY
+  }`;
 
   try {
     const response = await fetch(url);
@@ -63,7 +65,12 @@ export function setupSearchBar(onCitySelect, container) {
   });
 }
 
-function renderSuggestions(results, suggestionsList, searchInput, onCitySelect) {
+function renderSuggestions(
+  results,
+  suggestionsList,
+  searchInput,
+  onCitySelect
+) {
   suggestionsList.innerHTML = results
     .map((city) => createSuggestionItem(city))
     .join("");
@@ -76,4 +83,33 @@ function createSuggestionItem(city) {
         data-country="${city.country}" style="cursor: pointer;">
       ${city.name}${city.state ? ", " + city.state : ""}, ${city.country}
     </li>`;
+}
+
+export function darkmode() {
+  const toggleDarkModeBtn = document.getElementById("toggleDarkMode");
+  const darkModeLarge = document.getElementById("dark-modeLarge");
+
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme) {
+    document.body.classList.toggle("dark-mode", savedTheme === "dark");
+
+    if (savedTheme === "dark") {
+      darkModeLarge.src = "/public/images/dark-mode-dark.webp";
+    } else {
+      darkModeLarge.src = "/public/images/dark-mode.webp";
+    }
+  }
+
+  toggleDarkModeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+      darkModeLarge.src = "/public/images/dark-mode-dark.webp";
+      localStorage.setItem("theme", "dark");
+    } else {
+      darkModeLarge.src = "/public/images/dark-mode.webp";
+      localStorage.setItem("theme", "light");
+    }
+  });
 }

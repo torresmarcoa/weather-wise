@@ -4,25 +4,43 @@
   --primaryColor: #081753; 
 }
 
-.logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-}
-
-.logo img {
-  height: 60px;
-  width: auto;
-  padding: 1rem;
-}
-
+/*General styles*/
 h1 {
   color: var(--primaryColor);
   font-family: var(--font-title);
   font-size: 2.5rem;
 }
+/*End of general styles*/
+
+/*header style*/
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo_img {
+  height: 60px;
+  width: auto;
+  padding: 1rem;
+}
+
+.darkmode{
+ width: auto;
+ height: 30px;
+ padding: 1rem;
+ cursor: pointer;
+}
+
+#toggleDarkMode {
+  background-color: transparent;
+  border: none;
+  border-radius: 100%;
+}
+/*end header style*/
+
 
 #banner img {
   display: flex;
