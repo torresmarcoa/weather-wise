@@ -16,25 +16,71 @@
   <body>
     <header>
       <div class="logo">
-        <img
-          class="logo_img"
-          src="public/images/logos/logo.webp"
-          alt="weather wise logo"
-        />
-        <h1>Weather Wise</h1>
-        <button id="toggleDarkMode">
+        <div class="app-name">
           <img
-            class="darkmode"
-            id="dark-modeLarge"
-            src="public/images/dark-mode.webp"
-            alt="darkmode"
+            class="logo_img"
+            src="public/images/logos/logo.webp"
+            alt="weather wise logo"
           />
-        </button>
+          <h1 class="title">Weather Wise</h1>
+        </div>
+        <div class="options-btn">
+          <div id="unit-selection" class="unit-selection-header">
+            <button class="unit-btn active" data-unit="M">°C</button>
+            <button class="unit-btn" data-unit="S">K</button>
+            <button class="unit-btn" data-unit="I">°F</button>
+          </div>
+          <button id="toggleDarkMode">
+            <img
+              class="darkmode"
+              id="dark-modeLarge"
+              src="public/images/dark-mode.webp"
+              alt="darkmode"
+            />
+          </button>
+        </div>
       </div>
     </header>
     <main id="main">
       <div id="banner">
-        <img src="public/images/weatherwiseBaner.webp" alt="Landscape" />
+        <picture>
+          <source
+            srcset="public/images/weatherwiseBaner.webp"
+            media="(min-width:38rem)"
+          />
+          <img
+            src="public/images/weatherwiseBaner-small.webp"
+            alt="Landscape"
+            width="853"
+            height="1280"
+            loading="lazy"
+          />
+        </picture>
+      </div>
+      <div class="app-description">
+        <div class="description">
+          <h3>What is Weather Wise?</h3>
+          <p>
+            Welcome to WeatherWise! This app is designed to make checking the
+            weather simple and reliable. Whether you're planning your day,
+            preparing for a trip, or just curious about the weather in different
+            places, WeatherWise gives you accurate and up-to-date details like
+            temperature, wind speed, pressure, and more. Plus, you can easily
+            revisit your last three searches for quick access. Stay informed and
+            make better decisions with WeatherWise—your go-to weather companion!
+          </p>
+        </div>
+        <div class="description">
+          <h3>Instructions</h3>
+          <ol>
+            <li><strong>Search for a Location:</strong> Enter a city name in the search bar and select (click) on a suggestion.</li>
+            <li><strong>Check the Weather Details:</strong> View temperature, wind speed, pressure, and more in real-time.</li>
+            <li><strong>Switch Between Units:</strong> Click on the unit buttons to change between Celsius and Fahrenheit.</li>
+            <li><strong>Review Your Search History:</strong> Your last three searches will be saved for easy access.</li>
+            <li><strong>Close the Weather Window:</strong> Click the "X" button in the top right corner.</li>
+            <li><strong>Dark Mode Option:</strong> Toggle dark mode for a more comfortable viewing experience.</li>
+          </ol>
+        </div>
       </div>
       <div id="selectOne"><h2>Select one option:</h2></div>
       <div id="weatherinfo"></div>
@@ -48,7 +94,7 @@
       </div>
     </main>
     <footer id="footer">
-      <div id="footer">
+      <div class="footer">
         <p>Weather Wise</p>
         <p id="name">Marco Torres</p>
       </div>

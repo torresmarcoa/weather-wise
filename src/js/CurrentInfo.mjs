@@ -37,8 +37,8 @@ export default class CurrentWeather extends WeatherModal {
         <p><strong>Precipitation:</strong> ${weather.precip} ${precipUnit}</p>
         <p><strong>UV Index:</strong> ${weather.uv}</p>
         <p><strong>AQI:</strong> ${weather.aqi}</p>
-        <p><strong>Sunrise:</strong> ${weather.sunrise} AM</p>
-        <p><strong>Sunset:</strong> ${weather.sunset} PM</p>
+        <p><strong>Sunrise:</strong> ${weather.sunrise} UTC +0</p>
+        <p><strong>Sunset:</strong> ${weather.sunset} UTC +0</p>
       </div>
     `;
   }
