@@ -104,6 +104,7 @@ body {
   font-family: var(--font-body);
   animation: fadeIn 0.8s ease-in forwards;
   overflow-y:scroll;
+  
 }
 
 .modal-weather.fade-out {
@@ -223,6 +224,10 @@ body {
   color: white;
   transform: scale(1.1);
 }
+
+.sm-screen {
+  display: none;
+}
 /*End Modal styles*/
 
 /*Search bar style*/
@@ -267,6 +272,12 @@ body {
   margin-top: 1px;
   font-weight: 600;
   font-family: var(--font-body);
+}
+
+#footer a {
+  font-family: var(--font-body);
+  color: white;
+  margin-left: 1rem;
 }
 
 #buttons {
@@ -433,6 +444,29 @@ body {
 
   .app-description {
     flex-direction: column;
+  }
+
+  .weather-info {
+    flex-direction: column;
+    align-items: center; 
+    gap: 5px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%; 
+  }
+
+  .weather-info-header {
+    display: none; 
+  }
+
+  .sm-screen {
+    display: inline; 
+    font-size: large;
+  }
+
+  .weather-info p, 
+  .weather-info h4 {
+    margin: 2px;
   }
 }
 /*End of responsive*/

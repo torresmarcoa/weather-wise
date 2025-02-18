@@ -5,13 +5,16 @@ import {
   handleUnitSelection,
 } from "./utils.mjs";
 
+//class definition for handling weather modal
 export class WeatherModal {
+  //defaults
   constructor(modalId, defaultTitle) {
     this.modalId = modalId;
     this.selectedUnit = "M";
     this.defaultTitle = defaultTitle;
   }
 
+  //HTML structure
   renderModal() {
     return `
       <div id="${this.modalId}" class="modal-weather">
@@ -32,8 +35,10 @@ export class WeatherModal {
     `;
   }
 
+  //method to display the modal and initialize the event listeners
   displayModal() {
     document.body.insertAdjacentHTML("beforeend", this.renderModal());
+    //modal elements
     this.modalElement = document.getElementById(this.modalId);
     this.closeButton = this.modalElement.querySelector(".closeModal");
     this.unitButtons = this.modalElement.querySelectorAll(".unit-btn");
@@ -42,6 +47,7 @@ export class WeatherModal {
     );
     this.weatherResult = this.modalElement.querySelector("#weatherResult");
 
+    //closing button
     this.closeButton.addEventListener("click", () => {
       this.modalElement.classList.add("fade-out");
       setTimeout(() => {
@@ -49,6 +55,7 @@ export class WeatherModal {
       }, 500);
     });
 
+    //load preferred unit from local storage and update the buttons
     const savedUnit = localStorage.getItem("preferredUnit");
     if (savedUnit) {
       this.selectedUnit = savedUnit;
@@ -60,9 +67,11 @@ export class WeatherModal {
       });
     }
 
+    //handles unit selection
     handleUnitSelection(this.unitButtons, (selectedUnit) => {
       this.selectedUnit = selectedUnit;
 
+      //if weather data is already displayed, refresh it with new unit 
       if (
         this.weatherResult.getAttribute("data-lat") &&
         this.weatherResult.getAttribute("data-lon")
@@ -75,6 +84,7 @@ export class WeatherModal {
       }
     });
 
+    //search bar with callback funtions
     setupSearchBar(async (city) => {
       if (!city || !city.lat || !city.lon) {
         console.error("Invalid city data:", city);
@@ -89,6 +99,7 @@ export class WeatherModal {
       this.weatherResult.innerHTML = this.renderWeatherInfo(data);
     }, this.searchContainer);
 
+    //display search history and allow selection of previous searches
     displaySearchHistory((city) => {
       this.lastCity = city;
       saveSearchHistory(city);
@@ -100,6 +111,7 @@ export class WeatherModal {
     });
   }
 
+  //handles searching for a city and display weather data
   async performSearch(city) {
     if (!city || !city.lat || !city.lon) {
       console.error("Invalid city data:", city);
@@ -115,6 +127,7 @@ export class WeatherModal {
     this.weatherResult.innerHTML = this.renderWeatherInfo(data);
   }
 
+  //Abstract methods to fetch data and render weather info (implemented in subclassses)
   async getWeatherData(lat, lon) {
     throw new Error("getWeatherData() must be implemented in subclass");
   }

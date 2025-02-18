@@ -1,10 +1,13 @@
 import { WeatherModal } from "./WeatherModal.mjs";
 
+//extend weathermodal class and handling weather info
 export default class CurrentWeather extends WeatherModal {
   constructor() {
+    //calls the base class
     super("current-modal", "Current Weather");
   }
 
+  //fetches current weather data using the API.
   async getWeatherData(lat, lon) {
     try {
       const response = await fetch(
@@ -16,7 +19,8 @@ export default class CurrentWeather extends WeatherModal {
       return null;
     }
   }
-
+  
+  //Generates the HTML to display current weather information.
   renderWeatherInfo(data) {
     if (!data || !data.data || data.data.length === 0) {
       return `<p style="color: red;">No weather data available. Please check your search.</p>`;

@@ -1,6 +1,7 @@
 import darkModeDark from "../public/images/dark-mode-dark.webp";
 import darkModeLight from "../public/images/dark-mode.webp";
 
+//Fetches city data based in the search query using the OpenWeather API
 export async function searchCity(query) {
   const API_URL = "https://api.openweathermap.org/geo/1.0/direct";
   const limit = 5;
@@ -17,6 +18,7 @@ export async function searchCity(query) {
   }
 }
 
+//Validates the api response and handles errors
 async function validateResponse(response) {
   if (!response.ok) {
     const text = await response.text();
@@ -26,6 +28,7 @@ async function validateResponse(response) {
   return response.json();
 }
 
+//Creates the search bar component, handles user input to fetch and display city suggestions
 export function setupSearchBar(onCitySelect, container) {
   const searchContainer = document.createElement("div");
   searchContainer.id = "search-container";
@@ -78,12 +81,14 @@ export function setupSearchBar(onCitySelect, container) {
   });
 }
 
+//Function to render the city suggestions based on search results
 function renderSuggestions(results, suggestionsList) {
   suggestionsList.innerHTML = results
     .map((city) => createSuggestionItem(city))
     .join("");
 }
 
+//Creates and HTML list item for a city suggestion
 function createSuggestionItem(city) {
   return `
     <li data-lat="${city.lat}" data-lon="${city.lon}" 
@@ -93,6 +98,7 @@ function createSuggestionItem(city) {
     </li>`;
 }
 
+//Function to handle unit selection for temperature conversion and stores the preference
 export function handleUnitSelection(buttons, onUnitChange) {
   buttons.forEach((btn) => {
     btn.addEventListener("click", (event) => {
@@ -101,7 +107,10 @@ export function handleUnitSelection(buttons, onUnitChange) {
       localStorage.setItem("preferredUnit", selectedUnit);
 
       document.querySelectorAll(".unit-btn").forEach((b) => {
-        b.classList.toggle("active", b.getAttribute("data-unit") === selectedUnit);
+        b.classList.toggle(
+          "active",
+          b.getAttribute("data-unit") === selectedUnit
+        );
       });
 
       if (onUnitChange) onUnitChange(selectedUnit);
@@ -116,6 +125,7 @@ export function handleUnitSelection(buttons, onUnitChange) {
   }
 }
 
+//Toggles dark mode and light mode, saving the preference in local storage
 export function darkmode() {
   const toggleDarkModeBtn = document.getElementById("toggleDarkMode");
   const darkModeLarge = document.getElementById("dark-modeLarge");
@@ -145,6 +155,8 @@ export function darkmode() {
   });
 }
 
+//function to save the last three seached cities in local storage
+//updates the search history display
 export function saveSearchHistory(city) {
   let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
@@ -160,6 +172,7 @@ export function saveSearchHistory(city) {
   displaySearchHistory();
 }
 
+//function to display the search history and click on the past search
 export function displaySearchHistory(onCityClick) {
   const historyContainer = document.getElementById("search-history");
   const historyPElement = document.createElement("div");

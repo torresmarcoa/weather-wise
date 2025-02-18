@@ -3,6 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="WeatherWise is your go-to app for checking accurate and up-to-date weather forecasts, including temperature, wind speed, and more!"
+    />
+    <meta name="author" content="Marco Antonio Torres Aceves" />
+    <meta
+      property="og:title"
+      content="WeatherWise - Accurate Weather Forecasts"
+    />
+    <meta
+      property="og:description"
+      content="Check the weather with ease! Get accurate temperature, wind speed, and pressure details with WeatherWise."
+    />
+    <meta property="og:image" content="public/images/weatherwiseBaner.webp" />
+    <meta property="og:url" content="https://weather-wise-mt.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="WeatherWise - Stay Ahead of the Weather"
+    />
+    <meta
+      name="twitter:description"
+      content="Check real-time weather updates and forecasts with WeatherWise!"
+    />
+    <meta name="twitter:image" content="public/images/weatherwiseBaner.webp" />
     <title>Weather Wise</title>
     <script type="module" src="./js/main.js"></script>
     <link rel="stylesheet" href="./css/main.css" />
@@ -20,9 +46,11 @@
           <img
             class="logo_img"
             src="public/images/logos/logo.webp"
-            alt="weather wise logo"
+            alt="WeatherWise logo"
+            width="88"
+            height="92"
           />
-          <h1 class="title">Weather Wise</h1>
+          <h1 class="title">WeatherWise</h1>
         </div>
         <div class="options-btn">
           <div id="unit-selection" class="unit-selection-header">
@@ -35,12 +63,15 @@
               class="darkmode"
               id="dark-modeLarge"
               src="public/images/dark-mode.webp"
-              alt="darkmode"
+              alt="Toggle dark mode"
+              width="30"
+              height="30"
             />
           </button>
         </div>
       </div>
     </header>
+
     <main id="main">
       <div id="banner">
         <picture>
@@ -50,53 +81,93 @@
           />
           <img
             src="public/images/weatherwiseBaner-small.webp"
-            alt="Landscape"
+            alt="WeatherWise banner showing a beautiful sky"
             width="853"
             height="1280"
             loading="lazy"
           />
         </picture>
       </div>
-      <div class="app-description">
-        <div class="description">
-          <h3>What is Weather Wise?</h3>
+
+      <section class="app-description">
+        <article class="description">
+          <h2>What is WeatherWise?</h2>
           <p>
-            Welcome to WeatherWise! This app is designed to make checking the
+            Welcome to <strong>WeatherWise</strong>! This app makes checking the
             weather simple and reliable. Whether you're planning your day,
-            preparing for a trip, or just curious about the weather in different
-            places, WeatherWise gives you accurate and up-to-date details like
-            temperature, wind speed, pressure, and more. Plus, you can easily
-            revisit your last three searches for quick access. Stay informed and
-            make better decisions with WeatherWise—your go-to weather companion!
+            preparing for a trip, or just curious about different places,
+            WeatherWise provides real-time, accurate details like
+            <strong>temperature</strong>, <strong>wind speed</strong>,
+            <strong>pressure</strong>, and more. Plus, you can quickly revisit
+            your last three searches for easy access.
           </p>
-        </div>
-        <div class="description">
-          <h3>Instructions</h3>
+        </article>
+
+        <article class="description">
+          <h2>How to Use WeatherWise</h2>
           <ol>
-            <li><strong>Search for a Location:</strong> Enter a city name in the search bar and select (click) on a suggestion.</li>
-            <li><strong>Check the Weather Details:</strong> View temperature, wind speed, pressure, and more in real-time.</li>
-            <li><strong>Switch Between Units:</strong> Click on the unit buttons to change between Celsius and Fahrenheit.</li>
-            <li><strong>Review Your Search History:</strong> Your last three searches will be saved for easy access.</li>
-            <li><strong>Close the Weather Window:</strong> Click the "X" button in the top right corner.</li>
-            <li><strong>Dark Mode Option:</strong> Toggle dark mode for a more comfortable viewing experience.</li>
+            <li>
+              <strong>Search for a Location:</strong> Enter a city name in the
+              search bar and select (click) on a suggestion.
+            </li>
+            <li>
+              <strong>Check the Weather Details:</strong> View temperature, wind
+              speed, pressure, and more in real-time.
+            </li>
+            <li>
+              <strong>Switch Between Units:</strong> Click on the unit buttons
+              to change between Celsius, Kelvin, and Fahrenheit.
+            </li>
+            <li>
+              <strong>Review Your Search History:</strong> Your last three
+              searches will be saved for easy access.
+            </li>
+            <li>
+              <strong>Close the Weather Window:</strong> Click the "X" button in
+              the top right corner.
+            </li>
+            <li>
+              <strong>Dark Mode Option:</strong> Toggle dark mode for a
+              comfortable viewing experience.
+            </li>
           </ol>
-        </div>
-      </div>
-      <div id="selectOne"><h2>Select one option:</h2></div>
-      <div id="weatherinfo"></div>
-      <div id="buttons">
+        </article>
+      </section>
+
+      <section id="selectOne">
+        <h2>Select an Option:</h2>
+      </section>
+
+      <section id="weatherinfo"></section>
+
+      <section id="buttons">
         <div>
           <button id="current" class="checkweather">Current Weather</button>
         </div>
         <div>
           <button id="forecast" class="checkweather">Weather Forecast</button>
         </div>
-      </div>
+      </section>
     </main>
+
     <footer id="footer">
       <div class="footer">
-        <p>Weather Wise</p>
-        <p id="name">Marco Torres</p>
+        <div>
+          <p>2025© WeatherWise</p>
+          <p id="name">Created by Marco Antonio Torres Aceves</p>
+        </div>
+        <div>
+          <a
+            href="https://pixabay.com/es/photos/arco%C3%ADris-nube-sol-de-la-tarde-4047523/"
+            target="_blank"
+            >Large screen Banner</a
+          >
+          <a
+            href="https://pixabay.com/es/photos/nubes-cielo-ambiente-cloudscape-8029038/"
+            target="_blank"
+            >Small screen Banner</a
+          >
+        </div>
       </div>
     </footer>
   </body>
